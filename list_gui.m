@@ -81,6 +81,14 @@ function listbox1_Callback(hObject, eventdata, handles)
 
 % Hints: contents = cellstr(get(hObject,'String')) returns listbox1 contents as cell array
 %        contents{get(hObject,'Value')} returns selected item from listbox1
+% a=0;
+full_list = cellstr(get(handles.listbox1,'String'));
+sel_val=get(handles.listbox1,'value');
+sel_item=full_list(sel_val);
+sel_item_full_name = fullfile(handles.folder_dir,sel_item);
+img = imread(sel_item_full_name{1});
+axes(handles.axes1), imshow(img);
+
 
 
 % --- Executes during object creation, after setting all properties.
@@ -124,12 +132,12 @@ function pb_draw_image_Callback(hObject, eventdata, handles)
 % hObject    handle to pb_draw_image (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-full_list = cellstr(get(handles.listbox1,'String'));
-sel_val=get(handles.listbox1,'value');
-sel_item=full_list(sel_val);
-sel_item_full_name = fullfile(handles.folder_dir,sel_item);
-img = imread(sel_item_full_name{1});
-axes(handles.axes1), imshow(img);
+% full_list = cellstr(get(handles.listbox1,'String'));
+% sel_val=get(handles.listbox1,'value');
+% sel_item=full_list(sel_val);
+% sel_item_full_name = fullfile(handles.folder_dir,sel_item);
+% img = imread(sel_item_full_name{1});
+% axes(handles.axes1), imshow(img);
 
 
 
